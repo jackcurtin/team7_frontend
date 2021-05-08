@@ -1,0 +1,13 @@
+#widget_grid{
+  margin: 3%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10%;
+}
+
+.widget{
+  text-align: center;
+  background-color: lightskyblue;
+  border-radius: 25px;
+}

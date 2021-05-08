@@ -43,7 +43,7 @@ export class WidgetsComponent implements OnInit {
     });
     let gcd = this.widgetsService.gcd_more_than_two_numbers([engineers, uX, pM]);
     console.log(gcd);
-    this.roleRatio = `${engineers / gcd} : ${uX / gcd} : ${pM / gcd}`;
+    this.roleRatio = `${engineers / gcd} Engineers : ${uX / gcd} UX : ${pM / gcd} Project Managers`;
   }
 
 }
