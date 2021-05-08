@@ -1,3 +1,11 @@
 <ul *ngFor="let result of results">
-  <li>{{result.name}}</li>
+  <li>
+    <div class="resource_listing">
+      <h3 class="resource_name">{{this.result.name}}</h3>
+      <p>Role: {{this.result.role}}</p>
+      <p>Experience Level :{{this.result.roleLevel}}</p>
+      <p>Location: {{this.result.location}}</p>
+      <p>Sex: {{this.result.gender}}</p>
+    </div>
+  </li>
 </ul>
