@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
   }
 
   inputFormFields(role, exp, loc, gender, contr, poc): void {
-    this.http.get<any>('http://localhost:9092/api/resources')
+    this.http.get<Resource>('http://localhost:9092/api/resources')
       .subscribe(response => {
         this.returnedResources = response;
         this.returnedResources.forEach(resource => {
