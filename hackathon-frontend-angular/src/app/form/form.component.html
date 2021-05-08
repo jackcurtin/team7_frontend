@@ -1,41 +1,42 @@
 <form id="resource_search_form">
   <h2>I'm Looking For...</h2>
   <p>Role</p>
-  <select id="role_selection" name="role_selection">
-    <option value="">Any</option>
+  <select [(ngModel)]="role" id="role_selection" name="roleSelection">
+    <option value=undefined>Any</option>
     <option value="Engr">Engineer</option>
     <option value="UX">UX</option>
     <option value="PM">Project Manager</option>
   </select>
   <p>Experience Level</p>
-  <select id="experience_selection" name="experience_selection">
-    <option value="">Any</option>
+  <select [(ngModel)]="experience" id="experience_selection" name="experienceSelection">
+    <option value=undefined>Any</option>
     <option value="Junior">Junior</option>
     <option value="Mid">Mid</option>
     <option value="Senior">Senior</option>
   </select>
   <p>Location</p>
-  <select id="location_selection" name="location_selection">
-    <option value="">Any</option>
+  <select [(ngModel)]="location" id="location_selection" name="locationSelection">
+    <option value=undefined>Any</option>
     <option value="IL">Illinois</option>
     <option value="AZ">Arizona</option>
     <option value="TX">Texas</option>
   </select>
   <p>Gender</p>
-  <select id="gender_selection" name="gender_selection">
-    <option value="">Any</option>
+  <select [(ngModel)]="gender" id="gender_selection" name="genderSelection">
+    <option value=undefined>Any</option>
     <option value="F">Female</option>
     <option value="M">Male</option>
   </select>
   <p>Contractor</p>
-  <select id="contractor_selection" name="contractor_selection">
-    <option value="">Any</option>
-    <option value="true">Only Contractor</option>
-    <option value="false">Only Non-Contractors</option>
+  <select [(ngModel)]="contractor" id="contractor_selection" name="contractorSelection">
+    <option value=undefined>Any</option>
+    <option value="1">Only Contractor</option>
+    <option value="0">Only Non-Contractors</option>
   </select>
   <p>Person of Color</p>
-  <input id="poc_selection" name="poc_selection" type="checkbox" value="1">
-  <input type="submit" value="Submit" id="submit">
+  <input [(ngModel)]="poc" id="poc_selection" name="poc_selection" type="checkbox" value="1">
+  <input (click)="inputFormFields(role, experience, location, gender, contractor, poc)"
+         type="submit" value="Submit" id="submit">
 </form>
 
 <app-results></app-results>
