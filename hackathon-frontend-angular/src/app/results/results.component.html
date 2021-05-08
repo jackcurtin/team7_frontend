@@ -6,6 +6,20 @@
       <p>Experience Level: {{this.result.roleLevel}}</p>
       <p>Location: {{this.result.location}}</p>
       <p>Sex: {{this.result.gender}}</p>
+      <p>{{this.result.product}}</p>
+      <p>Product End Date: {{this.result.productEndDate | date }}</p>
+      <p>Product Location: {{this.result.productBuildLocation}}</p>
+      <div>
+        <p *ngIf="result.contractor">CONTRACTOR</p>
+      </div>
+      <h4>Skills</h4>
+      <div class="skills">
+        <p *ngIf="result.skill1" class="skill">{{result.skill1}}</p>
+        <p *ngIf="result.skill2" class="skill">{{result.skill2}}</p>
+        <p *ngIf="result.skill3" class="skill">{{result.skill3}}</p>
+        <p *ngIf="result.skill4" class="skill">{{result.skill4}}</p>
+        <p *ngIf="result.skill5" class="skill">{{result.skill5}}</p>
+      </div>
     </div>
   </li>
 </ul>
