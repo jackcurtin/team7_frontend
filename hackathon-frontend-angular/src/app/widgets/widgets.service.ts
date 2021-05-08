@@ -50,6 +50,24 @@ export class WidgetsService {
     return `Male: ${maleCount} | Female: ${femaleCount}`;
   }
 
+  getLocationResources(location, allResources): string{
+    let engCount = 0;
+    let uXCount = 0;
+    let pMCount = 0;
+    allResources.forEach(resource => {
+      if (resource.location === location){
+        if (resource.role === 'Engr'){
+          engCount++;
+        } else if (resource.role === 'UX'){
+          uXCount++;
+        } else if (resource.role === 'PM'){
+          pMCount++;
+        }
+      }
+    });
+    return `Engr: ${engCount} | UX: ${uXCount} | PM: ${pMCount}`;
+  }
+
 
   // taken from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-9.php
   gcd_more_than_two_numbers(input): any {
