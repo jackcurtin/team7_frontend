@@ -38,6 +38,18 @@ export class WidgetsService {
     return (pocCount / totalCount);
   }
 
+  getGenderRatio(allResources): string{
+    let maleCount = 0;
+    const totalCount = allResources.length;
+    allResources.forEach(resource => {
+      if (resource.gender === 'M'){
+        maleCount++;
+      }
+    });
+    const femaleCount = totalCount - maleCount;
+    return `Male: ${maleCount} | Female: ${femaleCount}`;
+  }
+
 
   // taken from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-9.php
   gcd_more_than_two_numbers(input): any {

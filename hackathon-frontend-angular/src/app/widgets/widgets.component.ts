@@ -12,6 +12,7 @@ export class WidgetsComponent implements OnInit {
   responseHold: any;
   allResources: any;
   roleRatio: string;
+  genderRatio: string;
   diversityPercent: number;
 
   constructor(private http: HttpClient, private widgetsService: WidgetsService) { }
@@ -26,6 +27,7 @@ export class WidgetsComponent implements OnInit {
         });
         this.roleRatio = this.widgetsService.getRoleRatio(this.allResources);
         this.diversityPercent = Math.floor(this.widgetsService.getDiversity(this.allResources) * 100);
+        this.genderRatio = this.widgetsService.getGenderRatio(this.allResources);
       });
   }
 }
