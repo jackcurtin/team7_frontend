@@ -7,6 +7,38 @@ export class WidgetsService {
 
   constructor() { }
 
+  // returns string of the ratio of the number of employees in each role
+  getRoleRatio(allResources): string{
+    let engineers = 0;
+    let uX = 0;
+    let pM = 0;
+
+    allResources.forEach(resource => {
+      if (resource.role === 'Engr'){
+        engineers++;
+      } else if (resource.role === 'UX'){
+        uX++;
+      } else if (resource.role === 'PM'){
+        pM++;
+      }
+    });
+    let gcd = this.gcd_more_than_two_numbers([engineers, uX, pM]);
+    return `${engineers / gcd} Engineers : ${uX / gcd} UX : ${pM / gcd} Project Managers`;
+  }
+
+  getDiversity(allResources): number{
+    let pocCount = 0;
+    const totalCount = allResources.length;
+    allResources.forEach(resource => {
+      if (resource.personOfColor === true){
+        pocCount++;
+      }
+    });
+    console.log(pocCount / totalCount);
+    return (pocCount / totalCount);
+  }
+
+
   // taken from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-9.php
   gcd_more_than_two_numbers(input): any {
     if (toString.call(input) !== '[object Array]') {
@@ -25,6 +57,7 @@ export class WidgetsService {
     return a;
   }
 
+  // taken from same source as above
   gcd_two_numbers(x, y): any {
     if ((typeof x !== 'number') || (typeof y !== 'number')) {
       return false;

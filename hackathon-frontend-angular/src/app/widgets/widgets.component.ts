@@ -12,6 +12,7 @@ export class WidgetsComponent implements OnInit {
   responseHold: any;
   allResources: any;
   roleRatio: string;
+  diversityPercent: number;
 
   constructor(private http: HttpClient, private widgetsService: WidgetsService) { }
 
@@ -23,27 +24,8 @@ export class WidgetsComponent implements OnInit {
         this.responseHold.forEach(resource => {
           this.allResources.push(resource);
         });
-        this.getRoleRatio();
+        this.roleRatio = this.widgetsService.getRoleRatio(this.allResources);
+        this.diversityPercent = Math.floor(this.widgetsService.getDiversity(this.allResources) * 100);
       });
   }
-
-  getRoleRatio(): void{
-    let engineers = 0;
-    let uX = 0;
-    let pM = 0;
-
-    this.allResources.forEach(resource => {
-      if (resource.role === 'Engr'){
-        engineers++;
-      } else if (resource.role === 'UX'){
-        uX++;
-      } else if (resource.role === 'PM'){
-        pM++;
-      }
-    });
-    let gcd = this.widgetsService.gcd_more_than_two_numbers([engineers, uX, pM]);
-    console.log(gcd);
-    this.roleRatio = `${engineers / gcd} Engineers : ${uX / gcd} UX : ${pM / gcd} Project Managers`;
-  }
-
 }
