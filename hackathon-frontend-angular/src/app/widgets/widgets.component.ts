@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Resource} from '../resource';
+import {WidgetsService} from './widgets.service';
 
 @Component({
   selector: 'app-widgets',
@@ -12,15 +13,13 @@ export class WidgetsComponent implements OnInit {
   allResources: any;
   roleRatio: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private widgetsService: WidgetsService) { }
 
   ngOnInit(): void {
-    console.log('widgets firing');
     this.http.get<Resource>('http://localhost:9092/api/resources')
       .subscribe(response => {
         this.allResources = [];
         this.responseHold = response;
-        console.log(this.responseHold);
         this.responseHold.forEach(resource => {
           this.allResources.push(resource);
         });
@@ -33,8 +32,6 @@ export class WidgetsComponent implements OnInit {
     let uX = 0;
     let pM = 0;
 
-    console.log(this.allResources);
-
     this.allResources.forEach(resource => {
       if (resource.role === 'Engr'){
         engineers++;
@@ -43,8 +40,10 @@ export class WidgetsComponent implements OnInit {
       } else if (resource.role === 'PM'){
         pM++;
       }
-      this.roleRatio = `${engineers} : ${uX} : ${pM}`;
     });
+    let gcd = this.widgetsService.gcd_more_than_two_numbers([engineers, uX, pM]);
+    console.log(gcd);
+    this.roleRatio = `${engineers / gcd} : ${uX / gcd} : ${pM / gcd}`;
   }
 
 }
