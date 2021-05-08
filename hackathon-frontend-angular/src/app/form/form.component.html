@@ -30,8 +30,8 @@
   <p>Contractor</p>
   <select [(ngModel)]="contractor" id="contractor_selection" name="contractorSelection">
     <option value=undefined>Any</option>
-    <option value="1">Only Contractor</option>
-    <option value="0">Only Non-Contractors</option>
+    <option value="True">Only Contractor</option>
+    <option value="False">Only Non-Contractors</option>
   </select>
   <p>Person of Color</p>
   <input [(ngModel)]="poc" id="poc_selection" name="poc_selection" type="checkbox" value="1">
@@ -39,4 +39,4 @@
          type="submit" value="Submit" id="submit">
 </form>
 
-<app-results [results]="returnedResources" ></app-results>
+<app-results [results]="filteredResources" ></app-results>

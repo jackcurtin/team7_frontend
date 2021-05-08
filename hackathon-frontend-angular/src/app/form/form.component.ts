@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
   poc = false;
 
   returnedResources: any;
+  filteredResources: any;
 
   constructor(private http: HttpClient) { }
 
@@ -24,13 +25,18 @@ export class FormComponent implements OnInit {
   inputFormFields(role, exp, loc, gender, contr, poc): void {
     this.http.get<Resource>('http://localhost:9092/api/resources')
       .subscribe(response => {
+        this.filteredResources = [];
         this.returnedResources = response;
         this.returnedResources.forEach(resource => {
-          console.log(resource);
+          if ((resource.role === role || !role)
+            && (resource.roleLevel === exp || !exp)
+          && (resource.location === loc || !loc)
+            && (resource.gender === gender || !gender)) {
+            // console.log(resource);
+            this.filteredResources.push(resource);
+          }
         });
       });
-    // console.log(`submitted ${role} ${exp} ${loc}
-    // ${gender} ${contr} ${poc}`);
   }
 }
 
