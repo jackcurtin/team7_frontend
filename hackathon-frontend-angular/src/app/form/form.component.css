@@ -1,0 +1,15 @@
+#page_grid{
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 20% 80%;
+}
+
+#results_window{
+  height: 60vh;
+  overflow-y: auto;
+}
+
+#submit{
+  display: block;
+  margin-top: 5%;
+}

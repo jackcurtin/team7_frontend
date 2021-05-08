@@ -31,7 +31,9 @@ export class FormComponent implements OnInit {
           if ((resource.role === role || !role)
             && (resource.roleLevel === exp || !exp)
           && (resource.location === loc || !loc)
-            && (resource.gender === gender || !gender)) {
+            && (resource.gender === gender || !gender)
+          && (resource.contractor === contr || !contr)
+          && (resource.personOfColor === poc || !poc)) {
             // console.log(resource);
             this.filteredResources.push(resource);
           }
