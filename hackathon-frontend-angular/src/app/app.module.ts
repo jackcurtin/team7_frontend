@@ -7,12 +7,14 @@ import { FormComponent } from './form/form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ResultsComponent } from './results/results.component';
 import {HttpClientModule} from '@angular/common/http';
+import { WidgetsComponent } from './widgets/widgets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    ResultsComponent
+    ResultsComponent,
+    WidgetsComponent
   ],
   imports: [
     BrowserModule,

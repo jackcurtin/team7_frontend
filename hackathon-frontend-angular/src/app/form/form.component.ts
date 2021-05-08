@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Resource} from '../resource';
 
 @Component({
   selector: 'app-form',
@@ -42,33 +43,33 @@ export class FormComponent implements OnInit {
   }
 }
 
-export interface Resource{
-  name;
-  startDate;
-  role;
-  roleLevel;
-  vendor;
-  product;
-  productStartDate;
-  productEndDate;
-  resourceProductStartDate;
-  productBuildLocation;
-  anchor;
-  workIntakeScoping;
-  interviewer;
-  securityMaven;
-  accessibility;
-  devSecOps;
-  educationTrack;
-  location;
-  gender;
-  availableForOtherAreas;
-  skill1;
-  skill2;
-  skill3;
-  skill4;
-  skill5;
-  contractor;
-  personOfColor;
-  resourceProductEndDate;
-}
+// export interface Resource{
+//   name;
+//   startDate;
+//   role;
+//   roleLevel;
+//   vendor;
+//   product;
+//   productStartDate;
+//   productEndDate;
+//   resourceProductStartDate;
+//   productBuildLocation;
+//   anchor;
+//   workIntakeScoping;
+//   interviewer;
+//   securityMaven;
+//   accessibility;
+//   devSecOps;
+//   educationTrack;
+//   location;
+//   gender;
+//   availableForOtherAreas;
+//   skill1;
+//   skill2;
+//   skill3;
+//   skill4;
+//   skill5;
+//   contractor;
+//   personOfColor;
+//   resourceProductEndDate;
+// }
