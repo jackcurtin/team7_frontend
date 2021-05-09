@@ -35,41 +35,14 @@ export class FormComponent implements OnInit {
             && (resource.gender === gender || !gender)
           && (resource.contractor === contr || !contr)
           && (resource.personOfColor === poc || !poc)) {
-            // console.log(resource);
             this.filteredResources.push(resource);
+            // this.filteredResources = this.filteredResources.sort((a, b) => {
+            //   let da: any = new Date(a.productEndDate);
+            //   let db: any = new Date(b.productEndDate);
+            //   return da - db;
+            // });
           }
         });
       });
   }
 }
-
-// export interface Resource{
-//   name;
-//   startDate;
-//   role;
-//   roleLevel;
-//   vendor;
-//   product;
-//   productStartDate;
-//   productEndDate;
-//   resourceProductStartDate;
-//   productBuildLocation;
-//   anchor;
-//   workIntakeScoping;
-//   interviewer;
-//   securityMaven;
-//   accessibility;
-//   devSecOps;
-//   educationTrack;
-//   location;
-//   gender;
-//   availableForOtherAreas;
-//   skill1;
-//   skill2;
-//   skill3;
-//   skill4;
-//   skill5;
-//   contractor;
-//   personOfColor;
-//   resourceProductEndDate;
-// }

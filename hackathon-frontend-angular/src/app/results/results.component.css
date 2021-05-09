@@ -9,6 +9,7 @@ ul{
   background-color: palegoldenrod;
   border-radius: 25px;
   padding: 2% 10%;
+  margin-right: 15%;
 }
 .resource_name{
   grid-column-start: 1;

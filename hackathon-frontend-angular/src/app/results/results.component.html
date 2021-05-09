@@ -1,13 +1,13 @@
 <ul *ngFor="let result of results">
   <li>
-    <div class="resource_listing">
+    <div class="resource_listing" *ngIf="!result.product || result.productEndDate">
       <h3 class="resource_name">{{this.result.name}}</h3>
       <p>Role: {{this.result.role}}</p>
       <p>Experience Level: {{this.result.roleLevel}}</p>
       <p>Location: {{this.result.location}}</p>
       <p>Sex: {{this.result.gender}}</p>
       <p>{{this.result.product}}</p>
-      <p>Product End Date: {{this.result.productEndDate | date }}</p>
+      <p>Prod End Date: {{this.result.productEndDate | date }}</p>
       <p>Product Location: {{this.result.productBuildLocation}}</p>
       <div>
         <p *ngIf="result.contractor">CONTRACTOR</p>

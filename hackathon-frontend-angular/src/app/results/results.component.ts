@@ -8,10 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ResultsComponent implements OnInit {
 
   @Input() results: any;
+  sortedResults: any;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
